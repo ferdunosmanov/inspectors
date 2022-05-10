@@ -12,9 +12,10 @@ type Storage struct {
 
 func SetupStorage() (*Storage, error) {
 	cluster := gocql.NewCluster("127.0.0.1")
-	cluster.Keyspace = "inspectors"
+	cluster.Authenticator = gocql.PasswordAuthenticator{Username: "cassandra", Password: "cassandra"}
+	cluster.Keyspace = "inspection"
 	cluster.Consistency = gocql.Quorum
-	session, err := cluster.NewSession()
+	session, err := cluster.CreateSession()
 	if err != nil {
 		return &Storage{}, err
 	}
