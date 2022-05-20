@@ -3,11 +3,9 @@ package rest
 import (
 	"encoding/json"
 	"net/http"
-
-	"github.com/ferdunosmanov/inspectors/pkg/allregistrations"
 )
 
-func GetAllRegistrations(registrations GetAllRegistrations.Service) func(w http.ResponseWriter, r *http.Request) {
+func AllRegistrations(registrations GetAllRegistrations.Service) func(w http.ResponseWriter, r *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
 		ir, err := registrations.GetAllRegistrations()
 		if err != nil {

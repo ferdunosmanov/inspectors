@@ -1,4 +1,4 @@
-package GetAllRegistrations
+package allregistrations
 
 import "github.com/ferdunosmanov/inspectors/pkg/adding"
 
@@ -18,7 +18,7 @@ func NewService(r Repository) *service {
 	return &service{r}
 }
 
-func (s *service) GetAllRegistrations() ([]adding.Registrations, error) {
+func (s *service) AllRegistrations() ([]adding.Registrations, error) {
 	ir, err := s.r.GetAllRegistrations()
 	if err != nil {
 		return nil, err
