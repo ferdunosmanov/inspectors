@@ -2,9 +2,8 @@ package rest
 
 import (
 	"encoding/json"
-	"net/http"
-
 	"github.com/ferdunosmanov/inspectors/pkg/reading"
+	"net/http"
 )
 
 func welcomeHandler() func(w http.ResponseWriter, r *http.Request) {

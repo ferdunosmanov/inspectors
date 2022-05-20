@@ -19,9 +19,9 @@ func NewService(r Repository) *service {
 }
 
 func (s *service) GetAllRegistrations() ([]adding.Registrations, error) {
-	cs, err := s.r.GetAllRegistrations()
+	ir, err := s.r.GetAllRegistrations()
 	if err != nil {
 		return nil, err
 	}
-	return cs, nil
+	return ir, nil
 }
