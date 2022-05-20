@@ -1,7 +1,6 @@
 package rest
 
 import (
-	"github.com/ferdunosmanov/inspectors/pkg/GetAllRegistrations"
 	"github.com/ferdunosmanov/inspectors/pkg/reading"
 	"github.com/gorilla/mux"
 )

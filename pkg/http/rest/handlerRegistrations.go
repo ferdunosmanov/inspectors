@@ -3,6 +3,8 @@ package rest
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/ferdunosmanov/inspectors/pkg/allregistrations"
 )
 
 func GetAllRegistrations(registrations GetAllRegistrations.Service) func(w http.ResponseWriter, r *http.Request) {
