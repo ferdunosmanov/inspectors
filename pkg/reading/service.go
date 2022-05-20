@@ -1,11 +1,13 @@
 package reading
 
+import "github.com/ferdunosmanov/inspectors/pkg/adding"
+
 type Repository interface {
-	GetAllProductNames() ([]string, error)
+	GetAllProductNames() ([]adding.Product, error)
 }
 
 type Service interface {
-	GetAllProductNames() ([]string, error)
+	GetAllProductNames() ([]adding.Product, error)
 }
 
 type service struct {
@@ -16,7 +18,7 @@ func NewService(r Repository) *service {
 	return &service{r}
 }
 
-func (s *service) GetAllProductNames() ([]string, error) {
+func (s *service) GetAllProductNames() ([]adding.Product, error) {
 	cs, err := s.r.GetAllProductNames()
 	if err != nil {
 		return nil, err

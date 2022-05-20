@@ -18,7 +18,6 @@ func main() {
 	}
 
 	rs := reading.NewService(r)
-
 	fmt.Println("Starting server on port: 8080...")
 	router := rest.InitHandlers(rs)
 	log.Fatal(http.ListenAndServe(":8080", router))

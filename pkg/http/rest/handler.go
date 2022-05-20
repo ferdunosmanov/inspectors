@@ -1,6 +1,7 @@
 package rest
 
 import (
+	"github.com/ferdunosmanov/inspectors/pkg/GetAllRegistrations"
 	"github.com/ferdunosmanov/inspectors/pkg/reading"
 	"github.com/gorilla/mux"
 )
@@ -10,5 +11,7 @@ func InitHandlers(rs reading.Service) *mux.Router {
 
 	router.HandleFunc("/api/", welcomeHandler()).Methods("GET")
 	router.HandleFunc("/api/products", GetAllProductNames(rs)).Methods("GET")
+	router.HandleFunc("/api/registrations", GetAllRegistrations(rs)).Methods("GET")
+
 	return router
 }
